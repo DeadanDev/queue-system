@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+$COLOR_BG: #2a2e37;
+$COLOR_CARD: #414857;
+
+:root {
+    background-color: #2a2e37 !important;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+
+    color: white;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: $COLOR_CARD;
+    padding: 20px;
+
+    width: 100%;
+    height: fit-content;
+
+    border-radius: 8px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
