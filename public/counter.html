@@ -6,15 +6,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al-marjan | Counter</title>
 
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/counter.css">
 </head>
 <body>
     <div class="container">
-        <div class="card">
+        <div class="card card-header">
             <div class="title">
-                Lorem ipsum dolor sit amet.
+                AL-MARJAN
             </div>
         </div>
+        <div class="card card-que">
+            <div class="que">
+                <div class="q-name">
+                    WAIT
+                </div>
+                <div class="q-number">
+                    1005
+                </div>
+            </div>
+            <div class="divider-vertical"></div>
+            <div class="que" id="q-next">
+                <div class="q-name">
+                    NEXT WAIT
+                </div>
+                <div class="q-number">
+                    1006
+                </div>
+            </div>
+            <div class="divider-horizontal"></div>
+            <div class="que-current">
+                <div class="q-name">
+                    CURRENT SERVING
+                </div>
+                <div class="q-number">
+                    1004
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="card card-button" id="q-button-all">
+            <button class="btn-lg"><i class='bx bxs-bell'></i>CALL</button>
+            <button class="btn-lg"><i class='bx bx-check'></i>DONE</button>
+            <button class="btn-lg"><i class='bx bx-skip-next'></i>SKIP</button>
+            <button class="btn-lg">RECALL</button>
+            <button class="btn-lg"><i class='bx bx-reset' ></i>RESET</button>
+        </div>
+
+        <div class="card card-listing">
+            <div class="dateTime">
+                <div class="date">
+                    20 September 2021
+                </div>
+                <div class="time">
+                    10.30 AM
+                </div>
+            </div>
+            <div class="listing">
+                <div class="list-detail">
+                    <div class="list-detail ticket">Ticket No: 1001</div>
+                    <div class="list-detail serve">Serving Time: 00.15.30</div>
+                </div>
+                <div class="list-time">
+                    <div class="list-time icon">
+                        <i class='bx bx-check'></i>
+                    </div>
+                    <div class="list-time record-time">8.15 AM</div>
+                </div>
+            </div>
+            <div class="listing">
+                <div class="list-detail">
+                    <div class="list-detail ticket">Ticket No: 1002</div>
+                    <div class="list-detail serve">Serving Time: 00.10.00</div>
+                </div>
+                <div class="list-time">
+                    <div class="list-time icon">
+                        <i class='bx bx-check'></i>
+                    </div>
+                    <div class="list-time record-time">8.25 AM</div>
+                </div>
+            </div>
+            <div class="listing">
+                <div class="list-detail">
+                    <div class="list-detail ticket">Ticket No: 1003</div>
+                    <div class="list-detail serve">Serving Time: 00.30.01</div>
+                </div>
+                <div class="list-time">
+                    <div class="list-time icon">
+                        <i class='bx bx-check'></i>
+                    </div>
+                    <div class="list-time record-time">8.55 AM</div>
+                </div>
+            </div>
+            <div class="listing">
+                <div class="list-detail">
+                    <div class="list-detail ticket">Ticket No: 1004</div>
+                    <div class="list-detail serve">Serving Time: Skip Number</div>
+                </div>
+                <div class="list-time">
+                    <div class="list-time icon">
+                        <i class='bx bx-skip-next'></i>
+                    </div>
+                    <div class="list-time record-time">9.11 AM</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-summary">
+            <div class="que">
+                <div class="q-name-total">
+                    TOTAL SERVE
+                </div>
+                <div class="q-number-total">
+                    8
+                </div>
+            </div>
+            <div class="que">
+                <div class="q-name-total">
+                    WAITING
+                </div>
+                <div class="q-number-total">
+                    -
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-addList">
+            <button class="btn-lg">ADD NUMBER</button>
+        </div>
+
     </div>
 
 </body>
