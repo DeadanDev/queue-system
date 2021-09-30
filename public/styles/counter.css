@@ -1,158 +1,207 @@
 /*# sourceMappingURL=counter.css.map */
-
-.card-header{
-    font-weight: bold;
-    grid-column: 1/6;
+.card-header {
+  font-weight: bold;
+  grid-column: 1/6;
 }
 
-.card-que{
-    grid-column: 1/4;
-    grid-row: 2/4;
-    display: flex;
-    flex-wrap: wrap;
+.card-que {
+  grid-column: 1/4;
+  grid-row: 2/5;
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
 }
 
-.que{
-    width: 40%;
-    padding: 10px;
+.que {
+  width: 40%;
+  padding: 10px;
 }
 
-.q-name{
-    font-size: 40px;
-    font-weight: bolder;
+.q-name {
+  font-size: 5vh;
+  font-weight: bolder;
 }
 
-.q-number{
-    font-size: 100px;
-    font-weight: bolder;
-    text-align: center;
-}
-.que-current{
-    width: 100%;
-    padding: 20px;
+.q-number {
+  font-size: 10vh;
+  font-weight: bolder;
+  text-align: center;
 }
 
-#q-next{
-    padding-left: 0% !important;
+.que-current {
+  width: 100%;
+  padding: 20px;
 }
 
-.divider-vertical{
-    height: 170px;
-    margin: 2rem 2.5rem;
-    width: 0.5rem;
-    flex-direction: column;
-    align-self: stretch;
-    background-color: #375772;
+.que-current .q-number {
+  font-size: 13vh;
 }
 
-.divider-horizontal{
-    display: flex;
-    height: 0.5rem;
-    width: 90%;
-    margin: 0rem 1.5rem;
-    background-color: #375772;
+#q-next {
+  padding-left: 0% !important;
 }
 
-.card-summary{
-    grid-column: 1/4;
-    display: flex;
-    text-align: center;
-    flex-wrap: wrap;
+.divider-vertical {
+  height: 170px;
+  margin: 2rem 2.5rem;
+  width: 0.5rem;
+  flex-direction: column;
+  align-self: stretch;
+  background-color: #375772;
 }
 
-.card-summary .que{
-    width: 50%;
-    padding: 5px;
+.divider-horizontal {
+  display: flex;
+  height: 0.5rem;
+  width: 90%;
+  margin: 0rem 1.5rem;
+  background-color: #375772;
 }
 
-.q-name-total{
-    font-size: 40px;
-    font-weight: bolder;
+.card-summary {
+  grid-column: 1/4;
+  grid-row: 4/6;
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
-.q-number-total{
-    font-size: 50px;
-    font-weight: bolder;
+.card-summary .que {
+  width: 50%;
+  padding: 5px;
 }
 
-.card-button{
-    grid-column: 4;
-    grid-row: 2/5;
-    padding: 0px;
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 40px;
-    background-color: #3B536E;
+.q-name-total {
+  font-size: 3vh;
+  font-weight: bolder;
 }
 
-button{
-    padding: 20px;
-    background-color: #213750;
-    border: solid #3FC2E3;
-    border-radius: 20px;
+.q-number-total {
+  font-size: 5vh;
+  font-weight: bolder;
 }
 
-.btn-lg{
-    width: 100%;
-    font-size: 40px;
+.card-button {
+  grid-column: 4;
+  grid-row: 2/6;
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 6vh;
+  justify-content: center;
+  background-color: #3B536E;
 }
 
-.card-listing{
-    grid-column: 5/6;
-    grid-row: 2/4;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
+.btn-lg {
+  width: 300px;
+  padding: 10px;
+  font-size: 5vh;
+  background-color: #213750;
+  border: solid #3FC2E3;
+  border-radius: 20px;
+  display: flex;
+  gap: 5px;
 }
 
-.dateTime{
-    width: 100%;
-    display: flex;
-    gap: 100px;
-    padding: 10px;
-    text-align: justify;
-    
+.btn-lg .icon {
+  border: none;
+  width: 30%;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.dateTime .date{
-    width: 250px;
-    padding: 0px;
+.btn-lg .name {
+  border: none;
+  width: 70%;
+  justify-content: flex-start;
 }
 
-.dateTime .time{
-    width: 80px;
+.card-listing {
+  grid-column: 5/6;
+  grid-row: 2/5;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  height: 70vh;
+  max-width: fit-content;
+  font-size: 20px;
 }
 
-.listing{
-    width: 100%;
-    height: fit-content;
-    padding: 10px;
-    border:  1px solid #707070;
-    display: flex;
-    gap: 100px;
+.dateTime {
+  width: 100%;
+  display: flex;
+  gap: 100px;
+  padding: 10px;
+  text-align: justify;
 }
 
-.list-detail{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    text-align: justify;
-    width: 250px;
+.dateTime .date {
+  width: 250px;
+  padding: 0px;
 }
 
-.list-time{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 80px;
+.dateTime .time {
+  width: 100px;
 }
 
-
-.card-addList{
-    grid-column: 5/6;
-    padding: 0px;
+.listing {
+  width: 500px;
+  height: 10vh;
+  padding: 10px;
+  border: 1px solid #707070;
+  display: flex;
+  gap: 100px;
 }
 
+.list-detail {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: justify;
+  width: 250px;
+}
 
+.list-time {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100px;
+}
 
+.card-addList {
+  grid-column: 5;
+  padding: 0px;
+  background-color: #3B536E;
+}
 
+.btn-wide {
+  display: flex;
+  font-size: 5vh;
+  padding: 10px;
+  gap: 5px;
+  border: solid #3FC2E3;
+  background-color: #213750;
+  border-radius: 20px;
+}
+
+.btn-wide .icon {
+  border: none;
+  width: 30%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn-wide .name {
+  border: none;
+  width: 70%;
+  justify-content: flex-start;
+}
+
+.container {
+  max-height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-gap: 1em;
+}
+
+/*# sourceMappingURL=counter.css.map */
