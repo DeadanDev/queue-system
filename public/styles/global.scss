@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-$COLOR_BG: #2a2e37;
-$COLOR_CARD: #414857;
+$COLOR_BG: #3B536E;
+$COLOR_CARD: #213750;
 
 :root {
-    background-color: #2a2e37 !important;
+    background-color: #3B536E !important;
 }
 
 * {
@@ -20,13 +20,18 @@ body {
 
 .container {
     padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 1em;
+    justify-items: stretch;
+    align-items: stretch;
 }
 
 .card {
     background: $COLOR_CARD;
     padding: 20px;
-
-    width: 100%;
+    
     height: fit-content;
 
     border-radius: 8px;
