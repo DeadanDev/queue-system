@@ -48,24 +48,28 @@
         
 
         <div class="card card-button" id="q-button-all">
-            <div>
-                <a class="btn-lg" href="#popup1">
+            <div class="btn-lg">
                 <div class="btn-lg icon"><i class='bx bxs-bell'></i></div>
                 <div class="btn-lg name">CALL</div>
                 </a>
             </div>
 
-            <div id="popup1" class="overlay">
+            <!-- <div class="btn-lg">
+                <div class="btn-lg icon"><i class='bx bx-subdirectory-left'></i></div>
+                <div class="btn-lg name">RECALL</div>
+            </div> -->
+
+            <!-- <div id="popup1" class="overlay">
                 <div class="popup">
                     <a class="close" href="#">&times;</a>
                     <div class="content">
                         <div id="content">
                             <div id="numpad">
-                                <!-- <div class="numpad__header"></div> -->
+                                <div class="numpad__header"></div>
                                 <div class="display">
-                                <!-- <div class="display-history">
+                                <div class="display-history">
                                 <input id="history-expressions" type="text" disabled />
-                                </div> -->
+                                </div>
                                     <div class="display-results">
                                         <input id="input-display" type="text" value="0" />
                                     </div>
@@ -98,7 +102,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="btn-lg">
                 <div class="btn-lg icon"><i class='bx bx-check'></i></div>
@@ -109,10 +113,54 @@
                 <div class="btn-lg name">SKIP</div>
                 
             </div>
-            <div class="btn-lg">
+            <div>
+                <a class="btn-lg" href="#popup1">
                 <div class="btn-lg icon"><i class='bx bx-subdirectory-left'></i></div>
                 <div class="btn-lg name">RECALL</div>
+                </a>
             </div>
+
+            <div id="popup1" class="overlay">
+                <div class="popup">
+                    <a class="close" href="#">&times;</a>
+                    <div class="content">
+                        <div id="content">
+                            <div id="numpad">
+                                <div class="display">
+                                    <div class="display-results">
+                                        <input id="input-display" type="text" />
+                                    </div>
+                                </div>
+                                <div class="numpad__body">
+                                    <div class="keypad">
+                                    <div class="keypad__grid">                
+                                        <button>1</button>
+                                        <button>2</button>
+                                        <button>3</button>
+                            
+                                        <button>4</button>
+                                        <button>5</button>
+                                        <button>6</button>
+                            
+                                        <button>7</button>
+                                        <button>8</button>
+                                        <button>9</button>
+                            
+                                        <div></div>
+                                        <button>0</button>
+                                        <button style="background: #DD3F3F;">&loarr;</button>
+                                    </div>
+                                    <div class="btn-wide">
+                                        <div class="btn-wide name" style="margin: auto; width: fit-content !important;">RECALL NUMBER</div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="btn-lg">
                 <div class="btn-lg icon"><i class='bx bx-reset' ></i></div>
                 <div class="btn-lg name">RESET</div>
@@ -198,10 +246,54 @@
         </div>
 
         <div class="card card-addList">
-            <div class="btn-wide">
+            <div>
+                <a class="btn-wide" href="#popup1">
                 <div class="btn-wide icon"><i class='bx bxs-message-square-add'></i></div>
                 <div class="btn-wide name">ADD NUMBER</div>
+                </a>
             </div>
+
+            <div id="popup1" class="overlay">
+                <div class="popup">
+                    <a class="close" href="#">&times;</a>
+                    <div class="content">
+                        <div id="content">
+                            <div id="numpad">
+                                <div class="display">
+                                    <div class="display-results">
+                                        <input id="input-display" type="text" />
+                                    </div>
+                                </div>
+                                <div class="numpad__body">
+                                    <div class="keypad">
+                                    <div class="keypad__grid">                
+                                        <button>1</button>
+                                        <button>2</button>
+                                        <button>3</button>
+                            
+                                        <button>4</button>
+                                        <button>5</button>
+                                        <button>6</button>
+                            
+                                        <button>7</button>
+                                        <button>8</button>
+                                        <button>9</button>
+                            
+                                        <div></div>
+                                        <button>0</button>
+                                        <button style="background: #DD3F3F;">&loarr;</button>
+                                    </div>
+                                    <div class="btn-wide">
+                                        <div class="btn-wide name" style="margin: auto; width: fit-content !important;">ADD NUMBER</div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <script>
