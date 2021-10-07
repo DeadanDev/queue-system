@@ -26,7 +26,7 @@
                     1005
                 </div>
             </div>
-            <div class="divider-vertical"></div>
+            <div class="card divider-vertical"></div>
             <div class="que" id="q-next">
                 <div class="q-name">
                     NEXT WAIT
@@ -35,7 +35,7 @@
                     1006
                 </div>
             </div>
-            <div class="divider-horizontal"></div>
+            <div class="card divider-horizontal"></div>
             <div class="que-current">
                 <div class="q-name">
                     CURRENT SERVING
@@ -63,11 +63,9 @@
                 <div class="btn-lg name">SKIP</div>
                 
             </div>
-            <div>
-                <a class="btn-lg" href="#popup1">
-                <div class="btn-lg icon"><i class='bx bx-subdirectory-left'></i></div>
-                <div class="btn-lg name">RECALL</div>
-                </a>
+            <div class="btn-lg" id="btn-addNum">
+                <div class="btn-lg icon"><i class='bx bxs-message-square-add'></i></div>
+                <div class="btn-lg name">ADD</div>
             </div>
 
             <div id="popup1" class="overlay">
@@ -98,10 +96,10 @@
                             
                                         <div></div>
                                         <button>0</button>
-                                        <button style="background: #DD3F3F;">&loarr;</button>
+                                        <button style="background: #213750;">&loarr;</button>
                                     </div>
                                     <div class="btn-wide">
-                                        <div class="btn-wide name" style="margin: auto; width: fit-content !important;">RECALL NUMBER</div>
+                                        <div class="btn-wide name" style="margin: auto; width: fit-content !important;">ADD NUMBER</div>
                                     </div>
                                     </div>
                                 </div>
@@ -194,119 +192,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="card card-addList">
-            <div>
-                <a class="btn-wide" href="#popup1">
-                <div class="btn-wide icon"><i class='bx bxs-message-square-add'></i></div>
-                <div class="btn-wide name">ADD NUMBER</div>
-                </a>
-            </div>
-
-            <div id="popup1" class="overlay">
-                <div class="popup">
-                    <a class="close" href="#">&times;</a>
-                    <div class="content">
-                        <div id="content">
-                            <div id="numpad">
-                                <div class="display">
-                                    <div class="display-results">
-                                        <input id="input-display" type="text" />
-                                    </div>
-                                </div>
-                                <div class="numpad__body">
-                                    <div class="keypad">
-                                    <div class="keypad__grid">                
-                                        <button>1</button>
-                                        <button>2</button>
-                                        <button>3</button>
-                            
-                                        <button>4</button>
-                                        <button>5</button>
-                                        <button>6</button>
-                            
-                                        <button>7</button>
-                                        <button>8</button>
-                                        <button>9</button>
-                            
-                                        <div></div>
-                                        <button>0</button>
-                                        <button style="background: #DD3F3F;">&loarr;</button>
-                                    </div>
-                                    <div class="btn-wide">
-                                        <div class="btn-wide name" style="margin: auto; width: fit-content !important;">ADD NUMBER</div>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
     </div>
-    <script>
-
-        const buttons = document.querySelectorAll('button');
-        const inputDisplay = document.querySelector('#input-display');
-        const historyExpressions = document.querySelector('#history-expressions');
-        
-        const operators = ['+', '-', '*', '/'];
-        let repeatedOperators = [];
-        const valuesButton = [
-          // 'C', '(', ')', '/',
-          '1', '2', '3', 
-          '4', '5', '6', 
-          '7', '8', '9', 
-          '0', 'x',
-        ]
-        
-        buttons.forEach((button, i) => { button.value = valuesButton[i] });
-        operators.forEach(operator1 => {
-          operators.forEach(operator2 => {
-            repeatedOperators.push(`${operator1}${operator2}`)
-          })
-        })
-        
-        buttons.forEach(button => {
-          button.addEventListener('click', () => getCharacter(button.value));
-        })
-        
-        function getCharacter(digit) {
-          if (inputDisplay.value === '0' && !operators.find(op => op === digit) && digit !== 'C') {
-            inputDisplay.value = digit;
-          } else if (digit === 'C') {
-            inputDisplay.value = '0';
-          } else {
-            inputDisplay.value += digit;
-          }
-        
-          checkCharacter(inputDisplay.value, digit);
-        }
-        
-        function checkCharacter(stringValue, digit) {
-          const inputDisplayArr = stringValue.split('');
-        
-          if (repeatedOperators.find(op => op === stringValue.slice(-2))) {
-            inputDisplayArr.splice(-2, 1);
-            inputDisplay.value = inputDisplayArr.join('');
-            latestOperators = '';
-          }
-        
-          if (digit === '=') {
-            inputDisplayArr.splice(-1, 1);
-        
-            solve(inputDisplayArr.join(''));
-          }
-        
-          if (digit === 'x') {
-            inputDisplayArr.pop();
-            inputDisplayArr.pop();
-            inputDisplay.value = inputDisplayArr.join('');
-          }
-        }
-        
-        </script>
+    <script src="javascript/numpad.js"></script>
 </body>
 </html>
