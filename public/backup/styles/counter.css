@@ -1,0 +1,90 @@
+.container {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* header height = 40px (padding) + 75px (logo) + 20px (margin) + 40px (padding-global)*/
+.header {
+  width: 100%;
+  padding: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+.header > .title {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+.header > .title .logo {
+  height: 75px;
+  width: 75px;
+  background: orange;
+}
+.header > .datetime {
+  display: flex;
+  gap: 30px;
+}
+
+.body {
+  width: 100%;
+  height: calc(100vh - 175px);
+  display: flex;
+}
+.body > .count {
+  flex: 0 0 50%;
+}
+.body > .functions {
+  flex: 0 0 20%;
+}
+.body > .history {
+  flex: 0 0 30%;
+}
+.body > .count, .body .history {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.body > .count > div:nth-child(1), .body .history > div:nth-child(1) {
+  flex: 0 0 70%;
+}
+.body > .count > div:nth-child(2), .body .history > div:nth-child(2) {
+  flex: 0 0 20%;
+}
+.body > .functions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.body > .functions > .btn-fx {
+  flex: 0 0 15%;
+  background: #213750;
+  border: 1px solid #3fc2e3;
+  border-radius: 10px;
+  width: 70%;
+  font-size: 2rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+.body > .functions > .btn-fx > .icon {
+  flex: 0 0 30%;
+  display: flex;
+  justify-content: center;
+}
+.body > .functions > .btn-fx > .label {
+  flex: 0 0 70%;
+}
+
+.card {
+  border-radius: 10px;
+  background: #213750;
+}
+
+/*# sourceMappingURL=counter.css.map */
