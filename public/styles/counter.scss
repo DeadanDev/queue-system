@@ -88,7 +88,7 @@
 	padding: 0px;
 	display: flex;
 	flex-wrap: wrap;
-	row-gap: 6vh;
+	row-gap: 30px;
 	justify-content: center;
 	background-color: #3b536e;
 	box-shadow: none;
@@ -189,6 +189,8 @@
 	background-color: #213750;
 	border-radius: 20px;
 	cursor: pointer;
+	text-decoration: none;
+
 }
 
 .btn-wide .icon {
@@ -259,7 +261,6 @@
 	margin: 70px auto;
 	padding: 20px;
 	background: #4c5a6b;
-	opacity: 70%;
 	border-radius: 5px;
 	width: 30%;
 	position: relative;
