@@ -8,11 +8,7 @@ const value = [];
 
 numpadBtns.forEach(btn => {
     btn.onclick = () => {
-        if (!btn.dataset.action) {
-            value.push(btn.innerHTML);
-        } else {
-            value.pop();
-        }
+        !btn.dataset.action && value.push(btn.innerHTML) || value.pop();
     
         screen.value = value.join('');
     };
