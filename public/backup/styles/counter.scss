@@ -26,6 +26,8 @@ $COLOR_CARD: #213750;
 
         align-items: flex-end;
 
+        font-size: 6vh;
+
         & .logo {
             height: 75px;
             width: 75px;
@@ -63,11 +65,81 @@ $COLOR_CARD: #213750;
         flex-direction: column;
         justify-content: space-between;
 
-        & > div:nth-child(1) {
-            flex: 0 0 70%;
+        & > .queue {
+            flex: 0 0 80%;
         }
-        & > div:nth-child(2) {
-            flex: 0 0 20%;
+        & > .summary {
+            flex: 0 0 15%;
+
+            display: flex;
+        }
+
+        & > .list {
+            flex: 0 0 100%;
+        }
+    }
+
+    & .queue {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        & > .prev-next {
+            flex: 0 0 45%;
+            width: 100%;
+        }
+        & > .current {
+            flex: 0 0 45%;
+            width: 100%;
+        }
+
+        & > .prev-next {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            & > .seperator {
+                width: 5px;
+                height: 90%;
+    
+                background: #375772;
+            }
+
+            & > .num {
+                & > .label {
+                    font-size: 3vh;
+                    text-transform: uppercase;
+                }
+                & > .value {
+                    font-size: 12vh;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        & > .current {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & > .num {
+                & > .label {
+                    font-size: 4vh;
+                    text-transform: uppercase;
+                }
+                & > .value {
+                    font-size: 16vh;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        & > .seperator {
+            height: 5px;
+            width: 100%;
+
+            background: #375772;
         }
     }
 
