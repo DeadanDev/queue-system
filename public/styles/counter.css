@@ -376,6 +376,11 @@
   transform: scale(0.95);
 }
 
+a.close {
+  font-size: 100px !important;
+  line-height: 52px;
+}
+
 /* .keypad__grid button.keypad__operators {
   color: var(--primary-color);
   } */
