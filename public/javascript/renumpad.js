@@ -3,17 +3,21 @@ const numpadBtns = numpad.querySelectorAll('.keypad button');
 const screen = document.querySelector('#input-display');
 const addNumBtn = document.querySelector('#add-Number');
 
-const value = [];
+let value = [];
+
+const update = () => screen.value = value.join('');
 
 for (const btn of numpadBtns) {
     btn.onclick = () => {
         !btn.dataset.action && value.push(btn.innerHTML) || value.pop();
     
-        screen.value = value.join('');
+        update();
     };
 };
 
 addNumBtn.onclick = () => {
     console.log(screen.value);
-    screen.value = '';
+
+    value = [];
+    update();
 }
