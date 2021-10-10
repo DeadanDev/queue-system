@@ -1,0 +1,15 @@
+$COLOR_BG: #213750;
+$COLOR_CARD: #3B536E;
+
+body{
+    background-color: $COLOR_BG;
+}
+
+.card {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 92%;
+    height: 55vh;
+    left: 4vw
+}

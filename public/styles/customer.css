@@ -1,0 +1,14 @@
+body {
+  background-color: #213750;
+}
+
+.card {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 92%;
+  height: 55vh;
+  left: 4vw;
+}
+
+/*# sourceMappingURL=customer.css.map */
