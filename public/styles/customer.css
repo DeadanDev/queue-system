@@ -1,29 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-:root {
-  background-color: #213750 !important;
-}
-
-* {
-  font-family: "Roboto", sans-serif;
-  box-sizing: border-box;
-  color: white;
-}
-
 body {
-  margin: 0;
-}
-
-.container {
-  padding: 20px;
+  background-color: #213750;
 }
 
 .card {
-  background: #3B536E;
-  padding: 20px;
-  width: 100%;
-  height: 628px;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 92%;
+  height: 55vh;
+  left: 4vw;
 }
 
 /*# sourceMappingURL=customer.css.map */
