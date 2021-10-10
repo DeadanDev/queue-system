@@ -1,35 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
-$COLOR_BG: #213750;
-$COLOR_CARD: #3B536E;
+$COLOR_BG: #3b536e;
+$COLOR_CARD: #213750;
 
 :root {
-    background-color: #2a2e37 !important;
+	background-color: #3b536e !important;
 }
 
 * {
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+	box-sizing: border-box;
 
-    color: white;
+	color: white;
+}
+
+*::-webkit-scrollbar {
+	width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #375772;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #3fc2e3;
+	outline: 1px solid #3fc2e3;
 }
 
 body {
-    margin: 0;
+	margin: 0;
+	height: 100vh;
 }
 
 .container {
-    padding: 20px;
+	padding: 20px;
 }
 
 .card {
-    background: $COLOR_CARD;
-    padding: 20px;
+	background: $COLOR_CARD;
+	padding: 20px;
 
-    width: 100%;
-    height: fit-content;
+	height: fit-content;
 
-    border-radius: 8px;
+	border-radius: 8px;
 
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
