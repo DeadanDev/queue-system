@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 :root {
-  background-color: #2a2e37 !important;
+  background-color: #3b536e !important;
 }
 
 * {
@@ -9,8 +9,23 @@
   color: white;
 }
 
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #375772;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #3fc2e3;
+  outline: 1px solid #3fc2e3;
+}
+
 body {
   margin: 0;
+  height: 100vh;
 }
 
 .container {
@@ -18,9 +33,8 @@ body {
 }
 
 .card {
-  background: #414857;
+  background: #213750;
   padding: 20px;
-  width: 100%;
   height: fit-content;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
