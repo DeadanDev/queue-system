@@ -3,6 +3,29 @@
   font-weight: bold;
   grid-column: 1/4;
   font-size: 3vh;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 5px;
+  gap: 50vw;
+}
+
+.title-image {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.t-image img {
+  width: 5vw;
+  height: 7vh;
+}
+
+.date-time {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: end;
+  align-items: center;
+  gap: 5vw;
 }
 
 .card-que {
