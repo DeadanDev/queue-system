@@ -139,13 +139,14 @@
   display: flex;
   gap: 5px;
   cursor: pointer;
+  user-select: none;
   text-decoration: none;
   transition: all 0.3s ease-out;
   margin: auto;
 }
 .btn-lg.disabled {
   opacity: 0.3;
-  cursor: initial;
+  cursor: unset !important;
 }
 
 .btn-lg .icon {

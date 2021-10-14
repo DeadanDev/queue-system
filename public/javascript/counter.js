@@ -6,7 +6,7 @@ const call = {
 };
 
 const data = {
-    wait: 0, next: 0, current: 0
+    wait: '0000', next: '0000', current: '0000'
 };
 
 const info = {
@@ -23,8 +23,8 @@ let sequence = 1001;
 const numNext = document.querySelector('#displayNext');
 const numWait = document.querySelector('#displayWait');
 const numCurr = document.querySelector('#displayCurrent');
-const numTotalServed = document.querySelector('#displayCurrent');
-const numTotalWaiting = document.querySelector('#displayWa');
+const numTotalServed = document.querySelector('#displayTotalServed');
+const numTotalWaiting = document.querySelector('#displayTotalWait');
 
 // list
 const listComplete = document.querySelector('#listComplete');
@@ -39,12 +39,15 @@ const updateDataDisplay = () => {
     numNext.innerHTML = data.next;
     numWait.innerHTML = data.wait;
     numCurr.innerHTML = data.current;
+
+    numTotalServed.innerHTML = listComplete.querySelectorAll('.item').length;
+    numTotalWaiting.innerHTML = queue.length;
 };
 
 const updateQueue = () => {
-    data.current = (queue[0]) ? queue[0] : '-';
-    data.wait = (queue[1]) ? queue[1] : '-';
-    data.next = (queue[2]) ? queue[2] : '-';
+    data.current = (queue[0]) ? queue[0] : '0000';
+    data.wait = (queue[1]) ? queue[1] : '0000';
+    data.next = (queue[2]) ? queue[2] : '0000';
 
     client.publish('almarjan/update', JSON.stringify({
         data, queue
@@ -104,16 +107,19 @@ const newDone = (time, num) => (
 
 const callNum = () => {
     call.retries++;
-    if (call.retries < call.maxRetry) {
+    if (call.retries <= call.maxRetry) {
         
-        client.publish('almarjan/call', JSON.stringify({
-            queue, data, num: call.num
-        }));
-        
-        return;
+        if (!call.disabled || call.retries === call.maxRetry) {
+            client.publish('almarjan/call', JSON.stringify({
+                queue, data, num: call.num
+            }));
+        }
+
+        if (call.retries === call.maxRetry) {
+            call.disabled = true;
+            document.querySelector('#btnCall').classList.add('disabled');
+        }
     }
-    call.disabled = true;
-    document.querySelector('#btnCall').classList.add('disabled');
 };
 
 const onRecall = num => {
@@ -130,21 +136,21 @@ const onRecall = num => {
 for (const btn of btns) {
     btn.onclick = () => {
         if (btn.dataset.action == 'call') {
-            if (!call.disabled) {
-                callNum();
-            }
+            callNum();
         }
         if (btn.dataset.action == 'done') {
-            listComplete.innerHTML += newDone(new Date().toString().split(' ')[4], data.current);
+            if (data.current !== '0000') {
+                listComplete.innerHTML += newDone(new Date().toString().split(' ')[4], data.current);
 
-            queue.splice(queue.indexOf(data.current), 1);
-            
-            updateQueue();
-            resetCall();
-
-            client.publish('almarjan/done', JSON.stringify({
-                data, queue
-            }));
+                queue.splice(queue.indexOf(data.current), 1);
+                
+                updateQueue();
+                resetCall();
+    
+                client.publish('almarjan/done', JSON.stringify({
+                    data, queue
+                }));
+            }
         }
         if (btn.dataset.action == 'skip') {
             queue.splice(queue.indexOf(data.current), 1)
@@ -178,7 +184,6 @@ for (const btn of btns) {
         updateDataDisplay();
         
         if (!queue.length && data.current !== call.num) {
-            console.log(queue);
             call.num = queue[0];
             call.retries = 0;
             call.disabled = false;

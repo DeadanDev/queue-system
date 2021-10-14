@@ -26,7 +26,7 @@ notiSound.muted = false;
 
 const updateDisplay = () => {
     numEls.forEach((el, x) => {
-        el.innerHTML = (queue[x]) ? queue[x] : '-';
+        el.innerHTML = (queue[x]) ? queue[x] : '0000';
     });
 };
 

@@ -16,34 +16,38 @@
 <body class="p-8">
     <div class="card">
         <p class="text-center font-bold font-sans" style="font-size: 10vh;">CURRENT NUMBER</p>
-        <p id="numCurrent" class="text-center font-bold font-sans leading-none animate__animated" style="font-size: 36vh">-</p>
+        <p id="numCurrent" class="text-center font-bold font-sans leading-none animate__animated" style="font-size: 36vh">0000</p>
     </div>
     <div class="box-content w-1000 p-4 -mb-8">
         <center>
         <div class="inline-block h-64 m-2 rounded-r-2xl rounded-bl-2xl bg-white" style="width: 21vw;">
           <div class="bg-black h-24 w-24 float-left font-bold font-sans" style="font-size:8vh; background-color:#3B536E;">1</div>
           <div class="h-24 w-max"></div>
-          <p id="num1" class="text-center font-bold font-sans" style="color:#213750; font-size: 13vh;">-</p>
+          <p id="num1" class="text-center font-bold font-sans" style="color:#213750; font-size: 13vh;">0000</p>
         </div>
         <div class="inline-block h-64 m-2 rounded-r-2xl rounded-bl-2xl bg-white" style="width: 21vw;">
             <div class="bg-black h-24 w-24 float-left font-bold font-sans" style="font-size:8vh; background-color:#3B536E;">2</div>
             <div class="h-24 w-max"></div>
-            <p id="num2" class="text-center font-bold font-sans" style="color:#213750; font-size: 13vh;">-</p>
+            <p id="num2" class="text-center font-bold font-sans" style="color:#213750; font-size: 13vh;">0000</p>
         </div>
         <div class="inline-block h-64 m-2 rounded-r-2xl rounded-bl-2xl bg-white" style="width: 21vw;">
             <div class="bg-black h-24 w-24 float-left font-bold font-sans" style="font-size:8vh; background-color:#3B536E;">3</div>
             <div class="h-24 w-max"></div>
-            <p id="num3" class="text-center font-bold font-sans" style="color:#213750; font-size: 13vh;">-</p>
+            <p id="num3" class="text-center font-bold font-sans" style="color:#213750; font-size: 13vh;">0000</p>
         </div>
         <div class="inline-block h-64 m-2 rounded-r-2xl rounded-bl-2xl bg-white" style="width: 21vw;">
             <div class="h-24 w-24 float-left font-bold font-sans" style="font-size:8vh; background-color:#3B536E;">4</div>
             <div class="h-24 w-max"></div>
-            <p id="num4" class="text-center font-bold font-sans" style="color:#213750; font-size: 13vh;">-</p>
+            <p id="num4" class="text-center font-bold font-sans" style="color:#213750; font-size: 13vh;">0000</p>
         </div>
         </center>
     </div>
+    <iframe src="res/audio/none.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+
+
     <script src="node_modules/mqtt/dist/mqtt.min.js"></script>
 
     <script src="javascript/customer.js"></script>
+
 </body>
 </html>
