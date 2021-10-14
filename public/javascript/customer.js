@@ -1,4 +1,4 @@
-const client = mqtt.connect('ws://localhost:52791');
+const client = mqtt.connect('ws://localhost:9001');
 
 client.on('connect', () => {
     console.log('connected to local MQTT broker');
