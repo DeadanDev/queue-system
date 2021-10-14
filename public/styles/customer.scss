@@ -15,3 +15,7 @@ body{
 
     background: $COLOR_CARD !important;
 }
+
+.animate__tada {
+    animation-iteration-count: infinite;
+}

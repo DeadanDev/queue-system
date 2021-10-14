@@ -35,8 +35,8 @@
                 <div class="q-name">
                     WAIT
                 </div>
-                <div class="q-number">
-                    1005
+                <div id="displayWait" class="q-number">
+                    -
                 </div>
             </div>
             <div class="card divider-vertical"></div>
@@ -44,8 +44,8 @@
                 <div class="q-name">
                     NEXT WAIT
                 </div>
-                <div class="q-number">
-                    1006
+                <div id="displayNext" class="q-number">
+                    -
                 </div>
             </div>
             <div class="card divider-horizontal"></div>
@@ -53,35 +53,33 @@
                 <div class="q-name">
                     CURRENT SERVING
                 </div>
-                <div class="q-number">
-                    1004
+                <div id="displayCurrent" class="q-number">
+                    -
                 </div>
             </div>
         </div>
         
 
         <div class="card card-button" id="q-button-all">
-            <div class="btn-lg">
+            <div id="btnCall" class="btn-lg disabled" data-action="call">
                 <div class="btn-lg icon"><i class='bx bxs-bell'></i></div>
                 <div class="btn-lg name">CALL</div>
-                </a>
+                
             </div>
 
-            <div class="btn-lg">
+            <div class="btn-lg" data-action="done">
                 <div class="btn-lg icon"><i class='bx bx-check'></i></div>
                 <div class="btn-lg name">DONE</div>
             </div>
-            <div class="btn-lg">
+            <div class="btn-lg" data-action="skip">
                 <div class="btn-lg icon"><i class='bx bx-skip-next'></i></i></div>
                 <div class="btn-lg name">SKIP</div>
                 
             </div>
-            <div id="btn-addNum" style="width: -webkit-fill-available">
-                <a class="btn-lg" href="#popup1">
+            <a class="btn-lg" id="btn-addNum" href="#popup1" data-action="add">
                 <div class="btn-lg icon"><i class='bx bxs-message-square-add'></i></div>
                 <div class="btn-lg name">ADD</div>
             </a>
-            </div>
 
             <div id="popup1" class="overlay">
                 <div class="popup">
@@ -124,7 +122,7 @@
                 </div>
             </div>
             
-            <div class="btn-lg">
+            <div class="btn-lg" data-action="reset">
                 <div class="btn-lg icon"><i class='bx bx-reset' ></i></div>
                 <div class="btn-lg name">RESET</div>
             </div>
@@ -133,207 +131,14 @@
         <div class="card card-listing">
             <div class="section">
                 <div class="title">Skipped</div>
-                <div class="list">
-                    <div class="item">
-                        <div class="time">
-                            <i class='bx bx-time' ></i>
-                            <div class="value">13:37</div>
-                        </div>
-                        <div class="num">
-                            <i class='bx bx-hash' ></i>
-                            <div class="value">1337</div>
-                        </div>
-                        <div class="btn">
-                            <div class="btn-redo">
-                                <i class='bx bx-redo'></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="time">
-                            <i class='bx bx-time' ></i>
-                            <div class="value">13:37</div>
-                        </div>
-                        <div class="num">
-                            <i class='bx bx-hash' ></i>
-                            <div class="value">1337</div>
-                        </div>
-                        <div class="btn">
-                            <div class="btn-redo">
-                                <i class='bx bx-redo'></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="time">
-                            <i class='bx bx-time' ></i>
-                            <div class="value">13:37</div>
-                        </div>
-                        <div class="num">
-                            <i class='bx bx-hash' ></i>
-                            <div class="value">1337</div>
-                        </div>
-                        <div class="btn">
-                            <div class="btn-redo">
-                                <i class='bx bx-redo'></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="time">
-                            <i class='bx bx-time' ></i>
-                            <div class="value">13:37</div>
-                        </div>
-                        <div class="num">
-                            <i class='bx bx-hash' ></i>
-                            <div class="value">1337</div>
-                        </div>
-                        <div class="btn">
-                            <div class="btn-redo">
-                                <i class='bx bx-redo'></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="time">
-                            <i class='bx bx-time' ></i>
-                            <div class="value">13:37</div>
-                        </div>
-                        <div class="num">
-                            <i class='bx bx-hash' ></i>
-                            <div class="value">1337</div>
-                        </div>
-                        <div class="btn">
-                            <div class="btn-redo">
-                                <i class='bx bx-redo'></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="time">
-                            <i class='bx bx-time' ></i>
-                            <div class="value">13:37</div>
-                        </div>
-                        <div class="num">
-                            <i class='bx bx-hash' ></i>
-                            <div class="value">1337</div>
-                        </div>
-                        <div class="btn">
-                            <div class="btn-redo">
-                                <i class='bx bx-redo'></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="time">
-                            <i class='bx bx-time' ></i>
-                            <div class="value">13:37</div>
-                        </div>
-                        <div class="num">
-                            <i class='bx bx-hash' ></i>
-                            <div class="value">1337</div>
-                        </div>
-                        <div class="btn">
-                            <div class="btn-redo">
-                                <i class='bx bx-redo'></i>
-                            </div>
-                        </div>
-                    </div>
+                <div id="listSkipped" class="list">
+                    
                 </div>
             </div>
             <div class="section">
                 <div class="title">Completed</div>
-                <div class="list">
-                    <div class="item">
-                        <div class="time">
-                            <i class='bx bx-time' ></i>
-                            <div class="value">13:37</div>
-                        </div>
-                        <div class="num">
-                            <i class='bx bx-hash' ></i>
-                            <div class="value">1337</div>
-                        </div>
-                        <div class="btn">
-                            <div class="btn-done">
-                                <i class='bx bx-check' ></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="time">
-                            <i class='bx bx-time' ></i>
-                            <div class="value">13:37</div>
-                        </div>
-                        <div class="num">
-                            <i class='bx bx-hash' ></i>
-                            <div class="value">1337</div>
-                        </div>
-                        <div class="btn">
-                            <div class="btn-done">
-                                <i class='bx bx-check' ></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="time">
-                            <i class='bx bx-time' ></i>
-                            <div class="value">13:37</div>
-                        </div>
-                        <div class="num">
-                            <i class='bx bx-hash' ></i>
-                            <div class="value">1337</div>
-                        </div>
-                        <div class="btn">
-                            <div class="btn-done">
-                                <i class='bx bx-check' ></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="time">
-                            <i class='bx bx-time' ></i>
-                            <div class="value">13:37</div>
-                        </div>
-                        <div class="num">
-                            <i class='bx bx-hash' ></i>
-                            <div class="value">1337</div>
-                        </div>
-                        <div class="btn">
-                            <div class="btn-done">
-                                <i class='bx bx-check' ></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="time">
-                            <i class='bx bx-time' ></i>
-                            <div class="value">13:37</div>
-                        </div>
-                        <div class="num">
-                            <i class='bx bx-hash' ></i>
-                            <div class="value">1337</div>
-                        </div>
-                        <div class="btn">
-                            <div class="btn-done">
-                                <i class='bx bx-check' ></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="time">
-                            <i class='bx bx-time' ></i>
-                            <div class="value">13:37</div>
-                        </div>
-                        <div class="num">
-                            <i class='bx bx-hash' ></i>
-                            <div class="value">1337</div>
-                        </div>
-                        <div class="btn">
-                            <div class="btn-done">
-                                <i class='bx bx-check' ></i>
-                            </div>
-                        </div>
-                    </div>
+                <div id="listComplete" class="list">
+                    
                 </div>
             </div>
         </div>
@@ -343,21 +148,30 @@
                 <div class="q-name-total">
                     TOTAL SERVE
                 </div>
-                <div class="q-number-total">
-                    8
+                <div id="displayTotalServed" class="q-number-total">
+                    -
                 </div>
             </div>
             <div class="que">
                 <div class="q-name-total">
                     WAITING
                 </div>
-                <div class="q-number-total">
+                <div id="displayTotalWait" class="q-number-total">
                     -
                 </div>
             </div>
         </div>
     </div>
+  
+    <script src="node_modules/mqtt/dist/mqtt.min.js"></script>
+    <script src="./javascript/libs/bixolon_printer/bxlcommon.js"></script>
+    <script src="./javascript/libs/bixolon_printer/bxllabel.js"></script>
+    <script src="./javascript/libs/bixolon_printer/bxlpos.js"></script>
+
+    <script src="javascript/services/mqtt.service.js"></script>
+
     <script src="javascript/currentTime.js"></script>
     <script src="javascript/renumpad.js"></script>
+    <script src="javascript/counter.js"></script>
 </body>
 </html>
