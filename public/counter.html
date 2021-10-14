@@ -10,11 +10,24 @@
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/counter.css">
 </head>
-<body>
+<body onload="displayTime">
     <div class="container">
         <div class="card card-header">
-            <div class="title">
-                AL-MARJAN
+            <div class="title-image">
+                <div class="t-image">
+                    <img src="asset/al-marjan.png">
+                </div>    
+                <div class="title">
+                    AL-MARJAN
+                </div>
+            </div>
+            <div class="date-time">
+                <div class="title-date" id="t-date">
+                    
+                </div>
+                <div class="title-time" id="t-time">
+                    
+                </div>
             </div>
         </div>
         <div class="card card-que">
@@ -149,15 +162,15 @@
             </div>
         </div>
     </div>
-
+  
     <script src="node_modules/mqtt/dist/mqtt.min.js"></script>
     <script src="./javascript/libs/bixolon_printer/bxlcommon.js"></script>
     <script src="./javascript/libs/bixolon_printer/bxllabel.js"></script>
     <script src="./javascript/libs/bixolon_printer/bxlpos.js"></script>
 
-
     <script src="javascript/services/mqtt.service.js"></script>
 
+    <script src="javascript/currentTime.js"></script>
     <script src="javascript/renumpad.js"></script>
     <script src="javascript/counter.js"></script>
 </body>
