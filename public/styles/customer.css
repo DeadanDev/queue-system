@@ -7,9 +7,13 @@ body {
   flex-wrap: nowrap;
   justify-content: center;
   width: 92%;
-  height: 55vh;
+  height: 50vh;
   left: 4vw;
   background: #3B536E !important;
+}
+
+.h-64 {
+  height: 35vh !important;
 }
 
 .animate__tada {

@@ -1,151 +1,153 @@
 class Export {
-
-    var pos_data = {id:0, functions:{}};
-    var pos_func = {};
-    var incPosNum = 0;
-    
-    function getPosData() {
-        pos_data.functions = pos_func;
-        pos_func = {};
-        incPosNum = 0;
-    
-        return JSON.stringify(pos_data);
+    constructor() {
+        this.pos_data = {id:0, functions:{}};
+        this.pos_func = {};
+        this.incPosNum = 0;
     }
     
-    function setPosId(setId) {
-        pos_data.id = setId;
+    
+    getPosData() {
+        this.pos_data.functions = this.pos_func;
+        this.pos_func = {};
+        this.incPosNum = 0;
+    
+        return JSON.stringify(this.pos_data);
     }
     
-    function checkPrinterStatus() {
+    setPosId(setId) {
+        this.pos_data.id = setId;
+    }
+    
+    checkPrinterStatus() {
         var _a = {checkPrinterStatus:[]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function directPrintText(text) {
+    directPrintText(text) {
         var _a = {directPrintText:[text]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function directPrintHex(hexString) {
+    directPrintHex(hexString) {
         var _a = {directPrintHex:[hexString]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function cutPaper(bFeedCut = 0) {
+    cutPaper(bFeedCut = 0) {
         var _a = {cutPaper:[bFeedCut]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function setInternationalCharset(ics) {
+    setInternationalCharset(ics) {
         var _a = {setInternationalCharset:[ics]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function setCharacterset(charset) {
+    setCharacterset(charset) {
         var _a = {setCharacterset:[charset]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function printText(text, horizontal, vertical, bold, invert, underline, fonttype, alignment) {
+    printText(text, horizontal, vertical, bold, invert, underline, fonttype, alignment) {
         var _a = {printText:[text, horizontal, vertical, bold, invert, underline, fonttype, alignment]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function print1DBarcode(data, symbol, barWidth, height, hriPosition, alignment) {
+    print1DBarcode(data, symbol, barWidth, height, hriPosition, alignment) {
         var _a = {print1DBarcode:[data, symbol, barWidth, height, hriPosition, alignment]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function printPDF417(data, symbol, alignment, columnNumber, rowNumber, moduleWidth, moduleHeight, eccLevel) {
+    printPDF417(data, symbol, alignment, columnNumber, rowNumber, moduleWidth, moduleHeight, eccLevel) {
         var _a = {printPDF417:[data, symbol, alignment, columnNumber, rowNumber, moduleWidth, moduleHeight, eccLevel]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function printQRCode(data, model, alignment, moduleSize, eccLevel) {
+    printQRCode(data, model, alignment, moduleSize, eccLevel) {
         var _a = {printQRCode:[data, model, alignment, moduleSize, eccLevel]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function printGS1Databar(data, symbol, alignment, moduleSize) {
+    printGS1Databar(data, symbol, alignment, moduleSize) {
         var _a = {printGS1Databar:[data, symbol, alignment, moduleSize]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function printDataMatrix(data, alignment, moduleSize) {
+    printDataMatrix(data, alignment, moduleSize) {
         var _a = {printDataMatrix:[data, alignment, moduleSize]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;   
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;   
     }
     
-    function printCompositeBarcode(data, symbol, alignment, moduleSize) {
+    printCompositeBarcode(data, symbol, alignment, moduleSize) {
         var _a = {printCompositeBarcode:[data, symbol, alignment, moduleSize]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function printBitmap(imagedata, width, alignment, dither) {
+    printBitmap(imagedata, width, alignment, dither) {
         var _a = {printBitmap:[imagedata, width, alignment, dither]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function printBitmapFile(filepath, width, alignment, dither) {
+    printBitmapFile(filepath, width, alignment, dither) {
         var _a = {printBitmapFile:[filepath, width, alignment, dither]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function printPDFFile(filepath, pageNumber, width, alignment, dither) {
+    printPDFFile(filepath, pageNumber, width, alignment, dither) {
         var _a = {printPDFFile:[filepath, pageNumber, width, alignment, dither]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function pagemodeBegin() {
+    pagemodeBegin() {
         var _a = {pagemodeBegin:[]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function pagemodePrintArea(width, height) {
+    pagemodePrintArea(width, height) {
         var _a = {pagemodePrintArea:[width, height]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function pagemodePrintPosition(x, y) {
+    pagemodePrintPosition(x, y) {
         var _a = {pagemodePrintPosition:[x, y]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function pagemodePrintDirection(direction) {
+    pagemodePrintDirection(direction) {
         var _a = {pagemodePrintDirection:[direction]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function pagemodeEnd() {
+    pagemodeEnd() {
         var _a = {pagemodeEnd:[]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
     
-    function openDrawer(pinNumber) {
+    openDrawer(pinNumber) {
         var _a = {openDrawer:[pinNumber]};
-        pos_func["func"+incPosNum] = _a;
-        incPosNum++;
+        this.pos_func["func"+this.incPosNum] = _a;
+        this.incPosNum++;
     }
 }
 

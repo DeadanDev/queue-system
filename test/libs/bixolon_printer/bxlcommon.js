@@ -57,7 +57,7 @@ class Export {
 			xmlHttpCheck = new XMLHttpRequest();
 		}
 		
-		var inquiryData = makeResultInquiryData(requestId, responseId, 30);
+		var inquiryData = this.makeResultInquiryData(requestId, responseId, 30);
 		
 		xmlHttpCheck.open(method, requestURL, true);
 		xmlHttpCheck.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -68,7 +68,7 @@ class Export {
 				var ret = res.Result;
 	
 				if(ret.search("ready") >= 0 || ret.search("progress") >= 0)	{
-					checkResult(method, strPrinterName, requestId, responseId, _callback);
+					this.checkResult(method, strPrinterName, requestId, responseId, _callback);
 				}
 				else {
 					_callback(res.ResponseID + ":"+ ret);
@@ -101,7 +101,7 @@ class Export {
 				var res = JSON.parse(xmlHttpReq.responseText);
 				var ret = res.Result;
 				if(ret.search("ready") >= 0 || ret.search("progress") >= 0)	{
-					checkResult('POST', strPrinterName, res.RequestID, res.ResponseID, _callback);
+					this.checkResult('POST', strPrinterName, res.RequestID, res.ResponseID, _callback);
 				}
 				else if(ret.search("duplicated") >= 0) {
 					_callback(res.Result);
