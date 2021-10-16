@@ -26,6 +26,10 @@ const numCurr = document.querySelector('#displayCurrent');
 const numTotalServed = document.querySelector('#displayTotalServed');
 const numTotalWaiting = document.querySelector('#displayTotalWait');
 
+// printer name
+const printerNameCust = document.querySelector('#printerNameCust');
+const printerNameKitc = document.querySelector('#printerNameKitc');
+
 // list
 const listComplete = document.querySelector('#listComplete');
 const listSkipped = document.querySelector('#listSkipped');
@@ -135,10 +139,10 @@ const onRecall = num => {
 
 for (const btn of btns) {
     btn.onclick = () => {
-        if (btn.dataset.action == 'call') {
+        if (btn.dataset.action === 'call') {
             callNum();
         }
-        if (btn.dataset.action == 'done') {
+        if (btn.dataset.action === 'done') {
             if (data.current !== '0000') {
                 listComplete.innerHTML += newDone(new Date().toString().split(' ')[4], data.current);
 
@@ -152,7 +156,7 @@ for (const btn of btns) {
                 }));
             }
         }
-        if (btn.dataset.action == 'skip') {
+        if (btn.dataset.action === 'skip') {
             queue.splice(queue.indexOf(data.current), 1)
             
             listSkipped.innerHTML += newSkip(new Date().toString().split(' ')[4], data.current);
@@ -164,10 +168,16 @@ for (const btn of btns) {
             updateQueue();
             resetCall();
         }
-        if (btn.dataset.action == 'add') {
+        if (btn.dataset.action === 'print') {
+            addNumberBtn.innerHTML = 'PRINT';
+            addNumberBtn.onclick = printNum;
+        }
+        if (btn.dataset.action === 'add') {
+            addNumberBtn.innerHTML = 'ADD NUMBER';
+            addNumberBtn.onclick = addNum;
             numInput.value = sequence;
         }
-        if (btn.dataset.action == 'reset') {
+        if (btn.dataset.action === 'reset') {
             sequence = 1001;
             queue = [];
             
@@ -191,7 +201,12 @@ for (const btn of btns) {
     };
 }
 
-addNumberBtn.onclick = () => {
+const printNum = () => {
+    print4Customer(printerNameCust.value, numInput.value, data.current);
+    print4Kitchen(printerNameKitc.value, numInput.value);
+};
+
+const addNum = () => {
     queue.push(numInput.value);
 
     updateQueue();
@@ -200,6 +215,8 @@ addNumberBtn.onclick = () => {
     client.publish('almarjan/update', JSON.stringify({
         data, queue
     }));
+
+    printNum();
 
     if (call.num !== data.current) {
         resetCall();

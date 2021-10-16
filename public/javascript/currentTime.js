@@ -12,16 +12,8 @@ const displayTime = () => {
 	const tTime = (hours.toString().length === 1 ? `0${hours}` : hours) + ":" +  (x.getMinutes().toString().length === 1 ? `0${x.getMinutes()}` : x.getMinutes()) + ":" +  (x.getSeconds().toString().length === 1 ? `0${x.getSeconds()}` : x.getSeconds())  + ampm;
 	document.getElementById('t-date').innerHTML = tdate;
 	document.getElementById('t-time').innerHTML = tTime;
+
+	setTimeout(displayTime, 1000);
 }
 
-setInterval(() => {
-	displayTime();
-}, 1000);
-
-/* function display_c6()
-{
-	var refresh=1000; // Refresh rate in milli seconds
-	mytime=setTimeout('displayTime()',refresh);
-}
-
-display_c6(); */
+displayTime();
