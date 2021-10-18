@@ -10,7 +10,7 @@ const numVoice = [
 	},
 	{
 		path: "./res/voice/1.wav",
-		duration: 1200,
+		duration: 1300,
 	},
 	{
 		path: "./res/voice/2.wav",
