@@ -21,7 +21,7 @@ let queue = [];
 let timeout;
 // notification sound
 const notiSound = new Audio('./res/audio/noti.mp3');
-notiSound.loop = true;
+/* notiSound.loop = true; */
 notiSound.muted = false;
 
 const updateDisplay = () => {
@@ -63,6 +63,9 @@ client.on('message', (topic, message) => {
         // notify sound
         notiSound.currentTime = 0;
         notiSound.play();
+        setTimeout(() => num2Speech(data.current), notiSound.duration*1000);
+        
+        
 
         if (!queue[0]) {
             queue[0] = queue.splice(1, 1);
@@ -76,7 +79,6 @@ client.on('message', (topic, message) => {
         numCurrent.classList.add('animate__tada');
         timeout = setTimeout(() => {
             numCurrent.classList.remove('animate__tada');
-            notiSound.pause();
 
             updateDisplay();
         }, 10000);

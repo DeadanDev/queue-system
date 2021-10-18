@@ -6,7 +6,29 @@
   display: flex;
   flex-wrap: nowrap;
   padding: 5px;
-  gap: 50vw;
+  justify-content: space-between;
+}
+.card-header > div {
+  height: auto;
+}
+.card-header > div:nth-child(1) {
+  flex: 0 0 30%;
+}
+.card-header > div:nth-child(2) {
+  flex: 0 0 50%;
+}
+.card-header > .btn-config {
+  flex: 0 0 20%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 40px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.card-header > .btn-config > * {
+  font-size: 30px;
 }
 
 .title-image {
@@ -16,8 +38,59 @@
 }
 
 .t-image img {
-  width: 5vw;
-  height: 7vh;
+  height: 8vh;
+  padding: 5px 10px;
+  padding-left: 20px;
+}
+
+.content-config {
+  width: 300px;
+  padding-top: 100px;
+}
+.content-config > .form {
+  width: 100%;
+}
+.content-config > .form > .input-group {
+  width: 100%;
+}
+.content-config > .form > .input-group > .header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.content-config > .form > .input-group > .header > .icon {
+  font-size: 30px;
+}
+.content-config > .form > .input-group > .header > .icon > i {
+  color: #3fc2e3;
+}
+.content-config > .form > .input-group > .header > .title {
+  height: auto;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.content-config > .form > .input-group > .inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.content-config > .form > .input-group > .inputs > .input > .label {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.content-config > .form > .input-group > .inputs > .input > .input {
+  width: 100%;
+}
+.content-config > .form > .input-group > .inputs > .input > .input > input {
+  width: 100%;
+  font-size: 25px;
+  padding: 5px;
+  background: #213750;
+  outline: none;
+  border: 1px solid #3fc2e3;
 }
 
 .date-time {
@@ -25,7 +98,8 @@
   flex-wrap: nowrap;
   justify-content: end;
   align-items: center;
-  gap: 5vw;
+  gap: 3vw;
+  font-size: 18px;
 }
 
 .card-que {

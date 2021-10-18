@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al-marjan | Counter</title>
 
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href='./node_modules/boxicons/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/counter.css">
 </head>
@@ -22,13 +22,10 @@
                 </div>
             </div>
             <div class="date-time">
-                <div class="title-date" id="t-date">
-                    
-                </div>
-                <div class="title-time" id="t-time">
-                    
-                </div>
+                <div class="title-date" id="t-date"></div>
+                <div class="title-time" id="t-time"></div>
             </div>
+            <a id="btnConfig" href="#popup2" class="btn-config"><i class='bx bxs-cog'></i></a>
         </div>
         <div class="card card-que">
             <div class="que">
@@ -76,6 +73,10 @@
                 <div class="btn-lg name">SKIP</div>
                 
             </div>
+            <a href="#popup1" class="btn-lg" data-action="print">
+                <div class="btn-lg icon"><i class='bx bxs-printer'></i></div>
+                <div class="btn-lg name">PRINT</div>
+            </a>
             <a class="btn-lg" id="btn-addNum" href="#popup1" data-action="add">
                 <div class="btn-lg icon"><i class='bx bxs-message-square-add'></i></div>
                 <div class="btn-lg name">ADD</div>
@@ -113,6 +114,35 @@
                                         </div>
                                         <div class="btn-wide">
                                             <div class="btn-wide name" style="margin: auto; width: fit-content !important;" id="add-Number">ADD NUMBER</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="popup2" class="overlay">
+                <div class="popup">
+                    <a class="close" href="#">&times;</a>
+                    <div class="content content-config">
+                        <div class="form">
+                            <div class="input-group">
+                                <div class="header">
+                                    <div class="icon"><i class='bx bxs-printer' ></i></div>
+                                    <div class="title">Printer name</div>
+                                </div>
+                                <div class="inputs">
+                                    <div class="input">
+                                        <div class="label">For customer</div>
+                                        <div class="input">
+                                            <input type="text" id="printerNameCust" value="Printer1">
+                                        </div>
+                                    </div>
+                                    <div class="input">
+                                        <div class="label">For kitchen</div>
+                                        <div class="input">
+                                            <input type="text" id="printerNameKitc" value="Printer2">
                                         </div>
                                     </div>
                                 </div>
@@ -165,10 +195,10 @@
   
     <script src="node_modules/mqtt/dist/mqtt.min.js"></script>
     <script src="./javascript/libs/bixolon_printer/bxlcommon.js"></script>
-    <script src="./javascript/libs/bixolon_printer/bxllabel.js"></script>
     <script src="./javascript/libs/bixolon_printer/bxlpos.js"></script>
 
     <script src="javascript/services/mqtt.service.js"></script>
+    <script src="javascript/services/printer.service.js"></script>
 
     <script src="javascript/currentTime.js"></script>
     <script src="javascript/renumpad.js"></script>
