@@ -70,6 +70,9 @@ client.on('message', (topic, message) => {
         setTimeout(() => {
             num2Speech(data.current).then(() => {
                 client.publish('almarjan/donenoti');
+                numCurrent.classList.remove('animate__tada');
+
+                updateDisplay();
             });
         }, notiSound.duration*1000);
 
@@ -79,18 +82,9 @@ client.on('message', (topic, message) => {
 
         numEls[0].innerHTML = (queue[0]) ? queue[0] : '0000';
 
-        updateDisplay();
-
-        numCurrent.classList.remove('animate__tada');
-        clearInterval(timeout);
-
-        /* add and remove animation class within 10s */
         numCurrent.classList.add('animate__tada');
-        timeout = setTimeout(() => {
-            numCurrent.classList.remove('animate__tada');
 
-            updateDisplay();
-        }, 10000);
+        updateDisplay();
     }
 
     if (topic === 'almarjan/done') {
