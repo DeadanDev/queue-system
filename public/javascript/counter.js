@@ -184,16 +184,18 @@ for (const btn of btns) {
             }
         }
         if (btn.dataset.action === 'skip') {
-            queue.splice(queue.indexOf(data.current), 1)
-            
-            listSkipped.innerHTML += newSkip(new Date().toString().split(' ')[4], data.current);
-
-            client.publish('almarjan/skip', JSON.stringify({
-                data, queue
-            }));
-            
-            updateQueue();
-            resetCall();
+            if (queue.length > 0) {
+                queue.splice(queue.indexOf(data.current), 1)
+                
+                listSkipped.innerHTML += newSkip(new Date().toString().split(' ')[4], data.current);
+    
+                client.publish('almarjan/skip', JSON.stringify({
+                    data, queue
+                }));
+                
+                updateQueue();
+                resetCall();
+            }
         }
         if (btn.dataset.action === 'print') {
             addNumberBtn.innerHTML = 'PRINT';
