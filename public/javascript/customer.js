@@ -33,6 +33,7 @@ const updateDisplay = () => {
 client.on('connect', () => {
     client.subscribe('almarjan/call');
     client.subscribe('almarjan/update');
+    client.subscribe('almarjan/recall');
     client.subscribe('almarjan/done');
     client.subscribe('almarjan/skip');
 });
@@ -46,8 +47,10 @@ client.on('message', (topic, message) => {
 
     data = payload.data;
 
+    // remove all expect first index
     queue.splice(1, queue.length - 1);
 
+    // fill in new numbers 
     skips = 0;
     payload.queue.forEach((q, x) => {
         if (parseInt(q) === parseInt(queue[0])) {
@@ -64,14 +67,12 @@ client.on('message', (topic, message) => {
         notiSound.currentTime = 0;
         notiSound.play();
         setTimeout(() => num2Speech(data.current), notiSound.duration*1000);
-        
-        
 
         if (!queue[0]) {
-            queue[0] = queue.splice(1, 1);
+            queue[0] = queue.splice(1, 1)[0];
         }
 
-        numEls[0].innerHTML = (queue[0]) ? queue[0] : '-';
+        numEls[0].innerHTML = (queue[0]) ? queue[0] : '0000';
 
         updateDisplay();
 
@@ -91,6 +92,20 @@ client.on('message', (topic, message) => {
         notiSound.pause();
 
         clearTimeout(timeout);
+
+        updateDisplay();
+    }
+
+    if (topic === 'almarjan/recall') {
+        numCurrent.classList.remove('animate__tada');
+        notiSound.pause();
+
+        clearTimeout(timeout);
+
+        const temp = JSON.parse(JSON.stringify(payload.queue));
+        temp.unshift(undefined);
+
+        queue = temp;
 
         updateDisplay();
     }

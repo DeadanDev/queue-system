@@ -82,7 +82,7 @@ const newSkip = (time, num) => (
             <i class='bx bx-hash' ></i>
             <div class="value">${num}</div>
         </div>
-        <div class="btn" onclick="onRecall(${num});">
+        <div class="btn" onclick="onRecall('${num}');">
             <div class="btn-redo">
                 <i class='bx bx-redo'></i>
             </div>
@@ -133,6 +133,10 @@ const onRecall = num => {
     updateDataDisplay();
 
     resetCall();
+
+    client.publish('almarjan/recall', JSON.stringify({
+        data, queue
+    }));
 
     listSkipped.querySelector(`.item[data-num="${num}"]`).remove();
 };
