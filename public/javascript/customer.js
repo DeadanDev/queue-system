@@ -36,6 +36,7 @@ client.on('connect', () => {
     client.subscribe('almarjan/recall');
     client.subscribe('almarjan/done');
     client.subscribe('almarjan/skip');
+    client.subscribe('almarjan/reset');
 });
 
 let skips = 0;
@@ -66,7 +67,11 @@ client.on('message', (topic, message) => {
         // notify sound
         notiSound.currentTime = 0;
         notiSound.play();
-        setTimeout(() => num2Speech(data.current), notiSound.duration*1000);
+        setTimeout(() => {
+            num2Speech(data.current).then(() => {
+                client.publish('almarjan/donenoti');
+            });
+        }, notiSound.duration*1000);
 
         if (!queue[0]) {
             queue[0] = queue.splice(1, 1)[0];
@@ -75,6 +80,9 @@ client.on('message', (topic, message) => {
         numEls[0].innerHTML = (queue[0]) ? queue[0] : '0000';
 
         updateDisplay();
+
+        numCurrent.classList.remove('animate__tada');
+        clearInterval(timeout);
 
         /* add and remove animation class within 10s */
         numCurrent.classList.add('animate__tada');
@@ -106,6 +114,17 @@ client.on('message', (topic, message) => {
         temp.unshift(undefined);
 
         queue = temp;
+
+        updateDisplay();
+    }
+
+    if (topic === 'almarjan/reset') {
+        delete queue[0];
+
+        numCurrent.classList.remove('animate__tada');
+        notiSound.pause();
+
+        clearTimeout(timeout);
 
         updateDisplay();
     }

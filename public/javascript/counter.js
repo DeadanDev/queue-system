@@ -17,6 +17,23 @@ const info = {
 let queue = [];
 let sequence = 1001;
 
+
+client.on('connect', () => {
+    client.subscribe('almarjan/donenoti');
+});
+
+let talking = false;
+client.on('message', (topic, message) => {
+    if (topic === 'almarjan/donenoti') {
+        talking = false;
+
+        if (call.retries < call.maxRetry) {
+            call.disabled = false;
+            document.querySelector('#btnCall').classList.remove('disabled');
+        }
+    }
+});
+
 /* DOMS */
 
 // display
@@ -45,6 +62,7 @@ const updateDataDisplay = () => {
     numCurr.innerHTML = data.current;
 
     numTotalServed.innerHTML = listComplete.querySelectorAll('.item').length;
+    console.log(queue.length, listSkipped.querySelectorAll('.item').length);
     numTotalWaiting.innerHTML = queue.length + listSkipped.querySelectorAll('.item').length;
 };
 
@@ -113,7 +131,9 @@ const callNum = () => {
     call.retries++;
     if (call.retries <= call.maxRetry) {
         
-        if (!call.disabled || call.retries === call.maxRetry) {
+        if (!call.disabled) {
+            call.disabled = true;
+            document.querySelector('#btnCall').classList.add('disabled');
             client.publish('almarjan/call', JSON.stringify({
                 queue, data, num: call.num
             }));
@@ -128,6 +148,7 @@ const callNum = () => {
 
 const onRecall = num => {
     queue.unshift(num);
+    listSkipped.querySelector(`.item[data-num="${num}"]`).remove();
 
     updateQueue();
     updateDataDisplay();
@@ -138,13 +159,15 @@ const onRecall = num => {
         data, queue
     }));
 
-    listSkipped.querySelector(`.item[data-num="${num}"]`).remove();
 };
 
 for (const btn of btns) {
     btn.onclick = () => {
         if (btn.dataset.action === 'call') {
-            callNum();
+            if (!talking) {
+                talking = true;
+                callNum();
+            }
         }
         if (btn.dataset.action === 'done') {
             if (data.current !== '0000') {
@@ -193,6 +216,10 @@ for (const btn of btns) {
 
             updateQueue();
             updateDataDisplay();
+
+            client.publish('almarjan/reset', JSON.stringify({
+                data, queue
+            }));
         }
         
         updateDataDisplay();
