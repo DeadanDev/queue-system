@@ -46,6 +46,14 @@ const numVoice = [
 	},
 ];
 
+const preloadAudio = (url) => {
+    var audio = new Audio();
+    // once this file loads, it will call loadedAudio()
+    // the file will be kept by the browser as cache
+    audio.addEventListener('canplaythrough', () => {}, false);
+    audio.src = url;
+};
+
 let talking = false;
 const num2Speech = async (num) => {
 	return new Promise(async (resolve, reject) => {
@@ -65,3 +73,7 @@ const num2Speech = async (num) => {
 		resolve();
 	});
 };
+
+for (const voice of numVoice) {
+	preloadAudio(voice.path);
+}
