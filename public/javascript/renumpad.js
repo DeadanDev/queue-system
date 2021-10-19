@@ -9,6 +9,7 @@ const update = () => screen.value = value.join('');
 
 for (const btn of numpadBtns) {
     btn.onclick = () => {
+        value = screen.value.split('');
         !btn.dataset.action && value.push(btn.innerHTML) || value.pop();
     
         update();
@@ -16,8 +17,6 @@ for (const btn of numpadBtns) {
 };
 
 addNumBtn.onclick = () => {
-    console.log(screen.value);
-
     value = [];
     update();
 }

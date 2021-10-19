@@ -238,20 +238,22 @@ const printNum = () => {
 };
 
 const addNum = () => {
-    queue.push(numInput.value);
-
-    updateQueue();
-    updateDataDisplay();
+    if (numInput.value.split('').length > 0) {
+        queue.push(numInput.value);
     
-    client.publish('almarjan/update', JSON.stringify({
-        data, queue
-    }));
-
-    printNum();
-
-    if (call.num !== data.current) {
-        resetCall();
+        updateQueue();
+        updateDataDisplay();
+        
+        client.publish('almarjan/update', JSON.stringify({
+            data, queue
+        }));
+    
+        printNum();
+    
+        if (call.num !== data.current) {
+            resetCall();
+        }
+    
+        numInput.value = ++sequence;
     }
-
-    numInput.value = ++sequence;
 };
