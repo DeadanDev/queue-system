@@ -45,7 +45,7 @@ const updateDataDisplay = () => {
     numCurr.innerHTML = data.current;
 
     numTotalServed.innerHTML = listComplete.querySelectorAll('.item').length;
-    numTotalWaiting.innerHTML = queue.length;
+    numTotalWaiting.innerHTML = queue.length + listSkipped.querySelectorAll('.item').length;
 };
 
 const updateQueue = () => {
