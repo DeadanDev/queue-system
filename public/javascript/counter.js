@@ -164,9 +164,11 @@ const onRecall = num => {
 for (const btn of btns) {
     btn.onclick = () => {
         if (btn.dataset.action === 'call') {
-            if (!talking) {
-                talking = true;
-                callNum();
+            if (queue.length > 0) {
+                if (!talking) {
+                    talking = true;
+                    callNum();
+                }    
             }
         }
         if (btn.dataset.action === 'done') {
