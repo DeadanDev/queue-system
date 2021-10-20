@@ -31,6 +31,8 @@ const printPosNumber = (num, w, h, bold, fonttype) => {
 
     const str = pos.getPosData();
 
+    console.log(str);
+
     common.requestPrint('Printer1', str, res => {
         console.log(res);
     });
